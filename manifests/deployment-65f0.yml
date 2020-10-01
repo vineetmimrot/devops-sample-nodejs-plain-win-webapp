@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "vnmaks-3f1c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "vnmaks-3f1c"
+  template:
+    metadata:
+      labels:
+        app: "vnmaks-3f1c"
+    spec:
+      containers:
+        - name: "vnmaks-3f1c"
+          image: "vnmacr.azurecr.io/vnmaks165c"
+          ports:
+          - containerPort: 8080
